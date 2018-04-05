@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.header {
+	background-color: #c7565a;
+	padding: 15px;
+	margin-bottom: 30px;
+}
+
+.card {
+	margin-bottom: 15px;
+}
+
+.card .card-body {
+  padding: 10px;
+  min-height: 135px;
+}
+
+.card .card-body h5 {
+  font-size: 16px;
+}
+
+.card .card-body p {
+  color: #767676;
+}
+
+.card .card-body p span {
+  color: #000;
+  display: block;				
+}
+.card .card-image {
+  height: 250px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border-bottom: 2px solid #eee;
+  max-width: 500px;
+}
+
+.pagination .number, .left-arrow, .right-arrow a {
+  position: relative;
+  display: block;
+  padding: .5rem .75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #c7565a;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+}	
+
+.pagination .number, .left-arrow, .right-arrow .number.active a {
+		z-index: 1;
+		color: #fff;
+		background-color: #c7565a;
+		border-color: #c7565a;
+	
+} 
