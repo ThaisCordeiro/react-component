@@ -2,26 +2,31 @@ import React, { Component } from 'react';
 import './App.css';
 import Card from './component/Card';
 import OrderType from './component/OrderType'
+import OrderReverse from './component/OrderReverse';
 
 class App extends Component {
   'use strict'
-  constructor(props) {
-    super(props);
+ 
+  constructor() {
+    super();
     this.state = {
-      items: []
+      items: [],
+      reversed: false,
+      selected: true
     }
 
     this.renderItem = this.renderItem.bind(this);
     this.compare = this.compare.bind(this);
     this.itemSort = this.itemSort.bind(this);
+    this.itemReverse = this.itemReverse.bind(this);
   }
 
   UNSAFE_componentWillMount() {
-    // fetch('http://apis.webhub.com.br/iconic-pcs/modelos')
+    // {fetch('http://apis.webhub.com.br/iconic-pcs/modelos')
     //   .then(data => data.json())
     //   .then(items => {
     //     this.setState({ items })
-    //   });
+    //   });}
 
     this.setState({
       items: [
@@ -304,12 +309,34 @@ class App extends Component {
     ) ;  
   }
 
-  render() {
+  itemReverse (value) {
+    this.setState({ reversed: value });
+    // this.setState({ selected: !value });
 
+    // console.log(this.state.reversed)
+    // console.log(this.state.selected)
+
+    console.log(this.state.reversed)
+   
+
+  
+    // this.setState({ items: this.state.reversed ? this.state.items.reverse() : this.itemSort() });
+
+  }
+
+  render() {
+    
     return (
       <div className="App">
         <header className="App-header">
-          <OrderType itemSort = { this.itemSort }/>
+          <OrderType 
+            onSelected={ selected => this.setState({selected})} 
+            onReversed={ reversed => this.setState({reversed})} 
+            itemSort = { this.itemSort }
+          />
+
+          <OrderReverse
+            itemReverse= { this.itemReverse } />
         </header>
 
         <div className="container">
@@ -317,8 +344,6 @@ class App extends Component {
             { this.state.items.map(this.renderItem) }
           </div>                  
         </div>
-
-
       </div>
     );
   }

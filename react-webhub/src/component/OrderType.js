@@ -5,30 +5,19 @@ class OrderType extends Component {
   constructor() {
     super();
     this.state = {
-      value: 'Selecione...',
-      reversed: '',
-      selected: true
+      value: 'Selecione...'
     }
 
     this.itemChange = this.itemChange.bind(this);
   }
 
-  
-
   itemChange({ target }) {
     this.setState({value: target.value})
     this.props.itemSort( target.value );
-    // this.selected = true;
-    // this.reversed = false;
+ 
+    this.props.onReversed(false);
+    // this.props.onSelected(true);
   }
- 
- 
-  // itemReverse ({ target }) {
-  //   this.reversed = target.value;
-  //   this.selected = !target.value;
-  //   this.items = this.reversed ? this.items.reverse() : this.itemSort();
-  // }
-
   
   render() {
     return (

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 class Card extends Component {
   'use strict'
+  
   render() {
     return (
       <div className="col-md-3 col-sm-6">
