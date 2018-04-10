@@ -14,9 +14,8 @@ class OrderType extends Component {
   itemChange({ target }) {
     this.setState({value: target.value})
     this.props.itemSort( target.value );
- 
+
     this.props.onReversed(false);
-    // this.props.onSelected(true);
   }
   
   render() {

@@ -20,7 +20,7 @@ class Card extends Component {
               <span>
                 Sistema Operacional/Ano:
               </span>
-              { this.props.sistema }/{ this.props.ano }
+              { this.props.sistema_operacional }/{ this.props.ano_lancamento }
             </p>
           </div>
         </div>
